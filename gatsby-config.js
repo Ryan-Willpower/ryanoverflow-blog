@@ -1,14 +1,18 @@
+require("dotenv").config({
+  path: `.env`,
+});
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Ryanoverflow's Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Surasak C.`,
+      summary: `who has passion in programming and learning new things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `Ryan's blog`,
+    siteUrl: `https://ryanoverflow.com`,
     social: {
-      twitter: `kylemathews`,
+      linkedin: `https://www.linkedin.com/in/surasak-chaisurin-925199179`,
     },
   },
   plugins: [
@@ -70,6 +74,16 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-typescript`,
+    {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: process.env.STRAPI_API,
+        contentTypes: ["article"],
+        singleTypes: [`bio`],
+        queryLimit: 1000,
+      },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
