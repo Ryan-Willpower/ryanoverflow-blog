@@ -9,6 +9,7 @@ RUN apk add --no-cache \
   libc6-compat \
   libjpeg-turbo-dev \
   libpng-dev \
+  libtool \
   make \
   nasm
 
