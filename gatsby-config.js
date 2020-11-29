@@ -1,7 +1,3 @@
-require("dotenv").config({
-  path: `.env`,
-})
-
 module.exports = {
   siteMetadata: {
     title: `Ryanoverflow's Blog`,
@@ -64,7 +60,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: process.env.STRAPI_API,
+        apiURL: `http://${process.env.STRAPI_API}`,
         contentTypes: ["article"],
         singleTypes: [`bio`],
         queryLimit: 1000,
