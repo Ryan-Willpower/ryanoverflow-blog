@@ -33,7 +33,7 @@ const BlogPostTemplate: React.FC<PageProps<
       >
         <header>
           <h1 itemProp="headline">{post.Title}</h1>
-          <p>{post.PublishAt}</p>
+          <p>{post.published_at}</p>
         </header>
         <div
           dangerouslySetInnerHTML={{ __html: html }}
@@ -61,7 +61,7 @@ export const pageQuery = graphql`
       strapiId
       Title
       Description
-      PublishAt(formatString: "DD MMMM YYYY")
+      published_at(formatString: "DD MMMM YYYY")
       Content
     }
   }

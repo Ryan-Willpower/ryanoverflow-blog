@@ -11,7 +11,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allStrapiArticle(sort: { fields: PublishAt, order: ASC }, limit: 1000) {
+        allStrapiArticle(
+          sort: { fields: published_at, order: ASC }
+          limit: 1000
+        ) {
           nodes {
             strapiId
             url

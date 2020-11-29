@@ -48,7 +48,7 @@ const BlogIndex: React.FC<PageProps<IBlogIndexPageQuery, object, unknown>> = ({
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.PublishAt}</small>
+                  <small>{post.published_at}</small>
                 </header>
                 <section>
                   <p
@@ -81,7 +81,7 @@ export const pageQuery = graphql`
         strapiId
         Title
         Description
-        PublishAt(formatString: "DD MMMM YYYY")
+        published_at(formatString: "DD MMMM YYYY")
         Content
         url
       }

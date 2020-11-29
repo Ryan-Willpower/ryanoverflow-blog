@@ -19,7 +19,7 @@ interface StrapiArticle {
   strapiId?: number
   Title?: string
   Description?: string
-  PublishAt?: string
+  published_at?: string
   Content?: string
   url?: string
 }
